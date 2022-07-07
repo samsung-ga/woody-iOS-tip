@@ -6,6 +6,7 @@ issue에 정리 중
 
 ### Today I Learned 
 
+- [Clean Swift Template](https://github.com/wody-d/woody-iOS-tip/issues/21)
 - [Button (iOS 15이후)](https://github.com/wody-d/woody-iOS-tip/issues/20)
 - [Git Merge의 세가지 방법 - 깔끔한 커밋 히스토리](https://github.com/wody-d/woody-iOS-tip/issues/18)
 - [SwiftUI in UIKit & UIKit in SwiftUI](https://github.com/wody-d/woody-iOS-tip/issues/8)
