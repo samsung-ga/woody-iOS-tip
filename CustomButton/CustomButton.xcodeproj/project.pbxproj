@@ -14,6 +14,8 @@
 		EF86FC3D2875679100724713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF86FC3C2875679100724713 /* Assets.xcassets */; };
 		EF86FC402875679100724713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF86FC3E2875679100724713 /* LaunchScreen.storyboard */; };
 		EF86FC4828756FE300724713 /* MarrytingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF86FC4728756FE300724713 /* MarrytingButton.swift */; };
+		EF86FC4A2876CC3600724713 /* CodeBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF86FC492876CC3600724713 /* CodeBasedViewController.swift */; };
+		EF86FC4C2876CC7800724713 /* StoryboardBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF86FC4B2876CC7800724713 /* StoryboardBasedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		EF86FC3F2875679100724713 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF86FC412875679100724713 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF86FC4728756FE300724713 /* MarrytingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarrytingButton.swift; sourceTree = "<group>"; };
+		EF86FC492876CC3600724713 /* CodeBasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBasedViewController.swift; sourceTree = "<group>"; };
+		EF86FC4B2876CC7800724713 /* StoryboardBasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardBasedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				EF86FC332875679000724713 /* AppDelegate.swift */,
 				EF86FC352875679000724713 /* SceneDelegate.swift */,
 				EF86FC372875679000724713 /* ViewController.swift */,
+				EF86FC492876CC3600724713 /* CodeBasedViewController.swift */,
+				EF86FC4B2876CC7800724713 /* StoryboardBasedViewController.swift */,
 				EF86FC4728756FE300724713 /* MarrytingButton.swift */,
 				EF86FC392875679000724713 /* Main.storyboard */,
 				EF86FC3C2875679100724713 /* Assets.xcassets */,
@@ -141,10 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF86FC4A2876CC3600724713 /* CodeBasedViewController.swift in Sources */,
 				EF86FC382875679000724713 /* ViewController.swift in Sources */,
 				EF86FC4828756FE300724713 /* MarrytingButton.swift in Sources */,
 				EF86FC342875679000724713 /* AppDelegate.swift in Sources */,
 				EF86FC362875679000724713 /* SceneDelegate.swift in Sources */,
+				EF86FC4C2876CC7800724713 /* StoryboardBasedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
