@@ -6,7 +6,7 @@ issue에 정리 중
 
 ### Today I Learned 
 
-
+- [Cell 기본 구성 방식의 변화](https://github.com/wody-d/woody-iOS-tip/issues/25)
 - [Clean Swift Template](https://github.com/wody-d/woody-iOS-tip/issues/21)
 - Button 관련 
   - [Button (iOS 15이후)](https://github.com/wody-d/woody-iOS-tip/issues/20)
