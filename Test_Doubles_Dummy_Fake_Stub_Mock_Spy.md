@@ -1,16 +1,20 @@
+### Today I Learned
+
+----
+
+2022.10.01 (토)
+
+<br />
+<br />
 개발을 하다보면 종종 mock 데이터, dummy 데이터에 대한 얘기가 많이 나와요. 저는 이 두 용어가 같은 의미라고 생각했기 때문에 임의의 데이터가 필요한 경우 "mock 데이터 만들어서 테스트해주세요." "dummy 데이터 만들어주세요"라며 사용하곤 했습니다. 점점 TDD와 아키텍처에 관심을 갖다 보니 stub과 mock에 대한 자료도 보이며 제가 기존에 알고 있던 용어들에 관해서도 급격히 혼란이 왔습니다. 🥲 그래서 오늘 드디어 공부해봤습니다.
 
 
 
 ###  Test Doubles (테스트 대역)
 
-\> Test Double is a generic term for any case where you replace a production object for testing purposes. — Martin Fowler 
+> Test Double is a generic term for any case where you replace a production object for testing purposes. — Martin Fowler 
 
-유닛 테스트를 작성할 때, production과 동일하게 작동하지만 조금 더 단순화된 버전의 객체가 필요합니다. 이런 종류의 객체들이 ****Test Double**입니다.
-
-그럼 이게 왜 필요할까요? 👋🏻 
-
-한 가지 예시를 들어볼게요.
+유닛 테스트를 작성할 때, production과 동일하게 작동하지만 조금 더 단순화된 버전의 객체가 필요합니다. 이런 종류의 객체들이 Test Double입니다.<br />그럼 이게 왜 필요할까요? 👋🏻<br />한 가지 예시를 들어볼게요.
 
 ```swift
 
@@ -43,65 +47,16 @@ final class LogoutUseCaseImpl: LogoutUseCase {
 
 ```
 
-
-
-final class LogoutUseCaseImpl: LogoutUseCase {
-
-  private let authRepository: AuthRepository
-
-  private let accessTokenRepository: AccessTokenRepository
-
-  private let userAccountRepository: UserAccountRepository
-
-  init(
-
-​    authRepository: AuthRepository = AuthRepositoryImpl(),
-
-​    accessTokenRepository: AccessTokenRepository = AccessTokenRepositoryImpl(),
-
-​    userAccountRepository: UserAccountRepository = UserAccountRepositoryImpl()
-
-  ) {
-
-​    self.authRepository = authRepository
-
-​    self.accessTokenRepository = accessTokenRepository
-
-​    self.userAccountRepository = userAccountRepository
-
-  }
-
-   
-
-  func logout() -> Observable<AuthModels.Empty.Response> {
-
-​    authRepository.logout()
-
-​      .do { [weak self] _ in
-
-​        _ = self?.accessTokenRepository.deleteAccessToken()
-
-​        _ = self?.userAccountRepository.deleteLocalUserAccount()
-
-​      }
-
-  }
-
-}
-
-
-
-위 코드는 로그아웃 기능을 구현한 예시입니다.
-
-LogoutUseCaseImpl 객체를 테스트하기 위해선 3가지 프로퍼티가 필요해요. (조금 단순화시킴) <br />`AuthRepository`, `AccessTokenRepository`, `UserAccountRepository` <br />logout 메소드에 대해 테스트 할 때 오류가 난다면, 어디서 난 오류인지 바로 캐치할 수 있을까여? 로그아웃 네트워크 실패일 수도 있고, 토큰을 저장하는 로컬 디비에서 삭제할 때 실패할 수도 있어요.  
+위 코드는 로그아웃 기능을 구현한 예시입니다. <br />LogoutUseCaseImpl 객체를 테스트하기 위해선 3가지 프로퍼티가 필요해요. (조금 단순화시킴) <br />`AuthRepository`, `AccessTokenRepository`, `UserAccountRepository` <br />logout 메소드에 대해 테스트 할 때 오류가 난다면, 어디서 난 오류인지 바로 캐치할 수 있을까여? 로그아웃 네트워크 실패일 수도 있고, 토큰을 저장하는 로컬 디비에서 삭제할 때 실패할 수도 있어요.  
 
 즉, 객체를 테스트하기 위해서는 해당 객체가 완전히 독립적이어야 합니다. (의존성 0%) <br />
 
 하지만 객체들끼리 의존할 수 밖에 없기 때문에 해당 메소드를 테스트하기 위해 의존하는 객체들에 대한 대역을 만들어야 합니다. 위 예시에선 `AuthRepository`와 `AccessTokenRepository`, `UserAccountRepository` 3가지 객체들에 대한 대역을 이용해 logout 메소드를 테스트해볼 수 있습니다.
 
-블로그에 나온 다른 예시를 하나 더 들어볼게요.
+<br />블로그에 나온 다른 예시를 하나 더 들어볼게요.
 
-ViewModel이 Repository 프로퍼티를 가지고 있다고 해봅니다. 이때 ViewModel 테스트 코드를 작성할 때, 실제 네트워크 통신하는 Repository가 필요할까요?
+ViewModel이 Repository 프로퍼티를 가지고 있다고 해봅니다. <br />이때 ViewModel 테스트 코드를 작성할 때, 실제 네트워크 통신하는 Repository가 필요할까요?
+<br />
 
 아닙니다. UseCase를 테스트하는데 실제 Repository가 있다면 어디서 오류가 어디서 날 지 알 수 없습니다. 또한 해당 UseCase에서 2개 이상의 Repository를 사용한다면 더욱 혼란이 올거예요. Repository는 Repository Test를 별도로 작성해서 네트워크 통신이 잘 되는지 테스트를 작성하면 됩니다. ViewModel에서는 ViewModel이 가진 로직만 테스트하면 됩니다.
 
