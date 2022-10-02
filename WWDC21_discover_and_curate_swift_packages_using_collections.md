@@ -71,7 +71,7 @@ certificate, Signing key 그리고 input.json 모두 준비가 되었고, genera
 
 ```swift
 // collection.json 생성하기
-package-collection-generate input.json collection.json --verbose --auth-token
+package-collection-generate input.json collection.json --verbose --auth-token [깃헙토큰]
 
 // collection-signed.json 생성하기 (서명)
 package-collection-sign collection.json collection-signed.json developer-key.pem developer-cert.cer
@@ -102,3 +102,9 @@ swift package-collection remove https://raw.githubusercontent.com/wody-d/spm-col
 openssl pkcs12 -nocerts -in developer-key.p12 -out developer-key.pem && openssl rsa -in developer-key.pem -out developer-key.pem
 ```
 
+
+
+<br />
+
+- https://developer.apple.com/videos/play/wwdc2021/10197/
+- https://theswiftdev.com/how-to-create-a-swift-package-collection/
