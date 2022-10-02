@@ -32,7 +32,11 @@ extension UIButton {
 
 ----
 
-[Swift Documentation API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/#naming) 를 보고 작성한 내용입니다. 
+## API Design Guideline
+
+### Fundamental
+
+[Swift Documentation API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/#naming) 의 내용입니다. 
 
 ### 사용 시점의 명확성이 가장 중요하다.
 
@@ -145,3 +149,238 @@ public func print(
   _ items: Any..., separator: String = " ", terminator: String = "\n")
 ```
 
+
+
+----
+
+
+
+2022.10.02 (일)
+
+<br />
+
+<br />
+
+### Naming
+
+**코드를 읽는 사람이 모호하다고 느끼지 않도록 필요한 단어를 모두 포함시키기** 
+
+at 파라미터를 통해 x를 제거하는 것이 아니라 제거할 요소의 위치를 작성해야한다는 사실을 암시할 수 있습니다. 
+
+```swift
+extension List {   
+  public mutating func remove(at position: Index) -> Element
+} 
+
+employees.remove(at: x) // ✅ 
+employees.remove(x) // ☠️ unclear: are we removing x?
+```
+
+**불필요한 말은 생략하기**
+
+더 명확하게 하기 위한 의도는 좋지만, 중복된 정보를 주는 단어들은 생략해야 합니다. 애매함을 피하기 위해 정보를 반복해야 하는 경우도 있지만 일반적으론 매개변수를 통해 역할을 설명하는 단어를 사용하는 것이 더 좋다구 하네용 <br />아래 예시에선 Element가 특별한 내용을 전달하지 않고 cancelButton과 중복되기 때문에 생략해주어야 해요.
+
+```swift
+public mutating func remove(_ member: Element) -> Element?
+allViews.remove(cancelButton) // ✅
+
+public mutating func removeElement(_ member: Element) -> Element?
+allViews.removeElement(cancelButton) // ☠️ 
+```
+
+**변수, 매개변수, 관련 타입의 네이밍은 그들의 타입보다는 역할과 관련되기**
+
+```swift
+var string = "Hello" // ☠️ 
+protocol ViewController {
+  associatedtype ViewType : View // ☠️ 
+}
+class ProductionLine {
+  func restock(from widgetFactory: WidgetFactory) // ☠️ 
+}
+
+var greeting = "Hello" // ✅
+protocol ViewController {
+  associatedtype ContentView : View // ✅
+}
+class ProductionLine {
+  func restock(from supplier: WidgetFactory) // ✅
+}
+```
+
+만일, 역할과 타입과 일치해서 네이밍을 하게 된다면 뒤에 더 추가 설명을 붙여주라고 합니다.<br /> 아래 예시에서는 Protocol을 붙여주었네요. 
+
+```swift
+protocol Sequence {
+  associatedtype Iterator : IteratorProtocol
+}
+protocol IteratorProtocol { ... }
+
+```
+
+**매개 변수의 역할을 명확히 하기 위해 약한 유형 정보를 보정합니다**
+
+위에서 불필요한 말은 생략하라고 했는데 여기선, 약간의 보정이 필요하다고 하네요. 매개변수만으로는 설명이 모호해지는 경우엔 역할을 설명하는 명사를 붙입니다. 
+
+```swift
+func add(_ observer: NSObject, for keyPath: String)
+grid.add(self, for: graphics) // ☠️
+
+func addObserver(_ observer: NSObject, forKeyPath path: String)
+grid.addObserver(self, forKeyPath: graphics) // ✅
+```
+
+### Strive for Fluent Usage 
+
+**문법적인 영어 구문을 선호하기** 
+
+```swift
+x.insert(y, at: z) // x insert y at z
+x.subViews(havingColor: y) // x's subviews having color y
+
+x.insert(y, position: z) // ☠️
+x.subViews(color: y) // ☠️
+```
+
+1,2번째 매개변수 이후엔 fluent하지 않아도 된다고 합니당 의미에 영향을 미치지 않는다면은! 
+
+```swift
+AudioUnit.instantiate(
+  with: description, 
+  options: [.inProcess], completionHandler: stopProgressBar)
+```
+
+**Factory 메소드는 "make"로 시작하기**
+
+라는데 완전 처음 알았네요. 보통 "create", "init"을 많이 썼는데 새롭군요
+
+**initializer, factory 메소드의 매개변수는 구문을 만들지 말기** 
+
+문장을 만들지 말고, 무엇이 필요한 지 적어야 합니다. <br />
+
+Color는 red, green, blue가 필요하고, widget은 gears, spindles가 필요하고, Link는 target이 필요합니다. 만일 구문을 만들어버린다면 오히려 혼란을 야기할 수 있어요.
+
+```swift
+// ✅ 좋은 케이스
+let foreground = Color(red: 32, green: 64, blue: 128)
+let newPart = factory.makeWidget(gears: 42, spindles: 14)
+let ref = Link(target: destination)
+
+// ☠️ 안좋은 케이스 
+let foreground = Color(havingRGBValuesRed: 32, green: 64, andBlue: 128)
+let newPart = factory.makeWidget(havingGearCount: 42, andSpindleCount: 14)
+let ref = Link(to: destination)
+
+```
+
+**사이드 이펙트에 따른 메소드명 짓기** 
+
+사이드 이펙트가 무엇일까요? 사이드 이펙트는 해당 프로퍼티를 이용해 일어난 어떤 일을 의미합니다. 프로퍼티 x를 변화시키는 메소드를 수행한다면 이것은 사이드 이펙트가 있는 메소드입니다. 프로퍼티 x를 출력하는 것 또한 사이드 이펙트가 있는 메소드 입니다. 사이드 이펙트가 없는 메소드의 네이밍은 명사구로 읽히면 좋습니다.
+
+사이드 이펙트 있는 메소드 ex) print(x), x.sort(), x.append(y)<br/>사이드 이펙트 없는 메소드 ex) x.distance(to: y), i.successor() 
+
+값에 변화가 일어나는 메소드는 동사, 일어나지 않는다면 "ed"나 "ing"를 붙여 차이점을 보여줍니다. "ed"를 선호하되, 문법적으로 말이 안된다면 "ing"를 붙이라고 하네요. 
+
+값에변화가 일어나는 메소드 ex) x.sort(), x.append(y)<br />값에 변화가 일어나지 않는 메소드 ex) z = x.sorted(), z = x.appending(y) 
+
+**Boolean 메소드와 프로퍼티는 값에 변화가 일어나지 않는다면, 문장으로 읽혀야합니다.**
+
+ex) x.isEmpty(), line1.intersects(line2)
+
+**무엇인가를 기술하는 Protocol은 명사로 읽혀야 합니다.** 
+
+ex) Collection
+
+**기능을 설명하는 Protocol은 "able", "ible", 또는 "ing" 접미사를 이용해서 네이밍 짓기** 
+
+ex) Equatable, ProgressReporting
+
+**이외의 다른 프로퍼티, 변수, 상수의 이름은 명사로 읽혀야한다.** 
+
+### Conventions
+
+**Free Function보다는 메소드와 프로퍼티를 선호하기** 
+
+아래와 같은 특별한 케이스 말고는 메소드와 프로퍼티를 선호하라고 하는데 Free Function이 무엇일까? 멤버가 없는 함수를 말합니다. 아래 함수들은 어디에도 속하지 않는 함수들이에요. 그렇기에 어디서든 사용할 수 있습니다.
+
+```swift
+min(x, y, z)
+print(x)
+sin(x)
+```
+
+**대소문자 표기법 따르기**
+
+타입과 프로토콜 빼고는 모두 lowerCamelCase!! <br />그치만 예외도 있는듯.. utf8나 id 같이 미국 영어에서 일반적으로 대문자로 표시되는 것들이 예외입니다
+
+```swift
+var utf8Bytes: [UTF8.CodeUnit]
+var isRepresentableAsASCII = true
+var userSMTPServer: SecureSMTPServer
+```
+
+**메소드들의 기능들이 같다면 기본 이름 공유하기**
+
+```swift
+// ✅ 좋은 케이스
+extension Shape {
+  func contains(_ other: Point) -> Bool { ... }
+  func contains(_ other: Shape) -> Bool { ... }
+  func contains(_ other: LineSegment) -> Bool { ... }
+}
+```
+
+아래와 같이 Generic 타입으로 선언해도 좋아요.
+
+```swift
+// ✅ 좋은 케이스
+extension Collection where Element : Equatable {
+  func contains(_ sought: Element) -> Bool { ... }
+}
+```
+
+완전 다른 기능을 할 때에는 같으면 안돼요.
+
+```swift
+// ☠️ 안 좋은 케이스
+extension Database {
+  /// Rebuilds the database's search index
+  func index() { ... }
+
+  /// Returns the `n`th row in the given table.
+  func index(_ n: Int, inTable: TableID) -> TableRow { ... }
+}
+```
+
+리턴 타입을 오버로드하는 행위는 피해야 해요!
+
+```swift
+// ☠️ 안 좋은 케이스
+extension Box {
+  func value() -> Int? { ... }
+  func value() -> String? { ... }
+}
+```
+
+**Parmeter(매개 변수)과 Argument (인수)**
+
+default가 없는 매개 변수를 앞으로 배치시켜 메소드가 호출되는 것이 안정적이 되도록 하라구 해요. <br />인수를 제대로 구분하지 못할 경우엔 인수 생략!.<br/>타입 변환하는 메소드의 첫번째 인수는 생략!<br/>첫 번째 인수는 상황에 따라 전치사로 하거나 생략하기!
+
+```swift
+a.moveTo(x: b, y: c)
+a.fadeFrom(red: b, green: c, blue: d)
+
+x.addSubview(y) // 문법적 구문
+
+view.dismiss(animated: false) // 문법적 구문이 아닐경우엔 label을 붙여야 함
+```
+
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+
+- https://papago.naver.net/website?locale=ko&source=en&target=ko&url=https%3A%2F%2Fwww.swift.org%2Fdocumentation%2Fapi-design-guidelines%2F%23naming
