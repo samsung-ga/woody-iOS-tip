@@ -27,7 +27,8 @@ extension UIButton {
 
 ```
 
-버튼의 이미지를 설정하는 Extension 코드인데 setBasicProfileImageWhenNilAndEmpty ...? <br />제가 만든 메소드이긴 하지만 아무 기준이 없네요. 그 기준을 공부해봅시다. 
+버튼의 이미지를 설정하는 Extension 코드인데 setBasicProfileImageWhenNilAndEmpty ...? <br />제가 만든 메소드이긴 하지만 너무 길고.. 다른 개발자들이 잘 이해할 수 있을 지..!? 😭 
+그 기준을 . 
 
 ----
 
@@ -74,7 +75,7 @@ func removeAll() {}
 
 그럼 주석은 어떤 식으로 작성해야할까? 
 
-1. ###### 주석 시작은 summary로!
+1. 주석 시작은 summary로!
 
 **summary 규칙들** 
 
