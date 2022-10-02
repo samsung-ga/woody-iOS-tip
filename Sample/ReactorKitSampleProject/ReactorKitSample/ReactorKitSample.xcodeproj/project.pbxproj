@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF19E5CC28E8965B008B6D41 /* PulseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF19E5CB28E8965B008B6D41 /* PulseViewController.swift */; };
+		EF19E5CE28E8967D008B6D41 /* CounterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF19E5CD28E8967D008B6D41 /* CounterViewReactor.swift */; };
 		EFEBC282289C06900012D9D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEBC281289C06900012D9D6 /* AppDelegate.swift */; };
 		EFEBC284289C06900012D9D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEBC283289C06900012D9D6 /* SceneDelegate.swift */; };
 		EFEBC286289C06900012D9D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEBC285289C06900012D9D6 /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF19E5CB28E8965B008B6D41 /* PulseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseViewController.swift; sourceTree = "<group>"; };
+		EF19E5CD28E8967D008B6D41 /* CounterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewReactor.swift; sourceTree = "<group>"; };
 		EFEBC27E289C06900012D9D6 /* ReactorKitSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactorKitSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEBC281289C06900012D9D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFEBC283289C06900012D9D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 				EFEBC281289C06900012D9D6 /* AppDelegate.swift */,
 				EFEBC283289C06900012D9D6 /* SceneDelegate.swift */,
 				EFEBC285289C06900012D9D6 /* ViewController.swift */,
+				EF19E5CD28E8967D008B6D41 /* CounterViewReactor.swift */,
+				EF19E5CB28E8965B008B6D41 /* PulseViewController.swift */,
 				EFEBC287289C06900012D9D6 /* Main.storyboard */,
 				EFEBC28A289C06910012D9D6 /* Assets.xcassets */,
 				EFEBC28C289C06910012D9D6 /* LaunchScreen.storyboard */,
@@ -213,6 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF19E5CC28E8965B008B6D41 /* PulseViewController.swift in Sources */,
+				EF19E5CE28E8967D008B6D41 /* CounterViewReactor.swift in Sources */,
 				EFEBC286289C06900012D9D6 /* ViewController.swift in Sources */,
 				EFEBC282289C06900012D9D6 /* AppDelegate.swift in Sources */,
 				EFEBC284289C06900012D9D6 /* SceneDelegate.swift in Sources */,
