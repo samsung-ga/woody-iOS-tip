@@ -28,7 +28,7 @@ extension UIButton {
 ```
 
 버튼의 이미지를 설정하는 Extension 코드인데 setBasicProfileImageWhenNilAndEmpty ...? <br />제가 만든 메소드이긴 하지만 너무 길고.. 다른 개발자들이 잘 이해할 수 있을 지..!? 😭 
-그 기준을 . 
+그 기준을 [Swift Documentation API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/#naming) 문서를 읽으면서 찾아봐요. 
 
 ----
 
@@ -36,11 +36,9 @@ extension UIButton {
 
 ### Fundamental
 
-[Swift Documentation API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/#naming) 의 내용입니다. 
-
 ### 사용 시점의 명확성이 가장 중요하다.
 
-프로퍼티와 메소드들은 한 번만 선언되지만 반복적으로 사용되므로 API를 설계할 때는 그것이 명확하고 정확해야 합니다. 사실 이 말은 그렇게 와닿지 않네요. 명확한 예시가 없어서.. 
+프로퍼티와 메소드들은 한 번만 선언되지만 반복적으로 사용되므로 API를 설계할 때는 그것이 명확하고 정확해야 한다는데, 사실 이 말은 그렇게 와닿지 않아요. 명확한 예시가 없어서.. 
 
 ### 간결함보다 명료함이 더 중요하다. 
 
