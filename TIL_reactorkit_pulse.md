@@ -4,11 +4,11 @@
 
 2022.10.02 (일)
 
-<br /><br />
+<br />
 
 ### @Pulse (in ReactorKit)
 
-[@Pulse](https://github.com/ReactorKit/ReactorKit#pulse)라는 프로퍼티 래퍼에  대해 알아볼게요. 
+[@Pulse](https://github.com/ReactorKit/ReactorKit#pulse)라는 프로퍼티 래퍼에 대해 정리해볼게요.
 
 > `Pulse` has diff only when mutated 
 
@@ -79,8 +79,9 @@ class PulseReactor: Reactor {
     }
 }
 ```
+<br />
 
-**실제 테스트 후:**
+**왜 필요할까?**
 
 Pulse는 값에 할당이 될때에 무조건 방출하는 프로퍼티 래퍼입니다. 보통 State는 값에 변화가 있든 없든 매번 방출이 됩니다. 그렇기에 값에 변화가 없어도 구독한 객체는 항상 변화가 일어납니다. 
 
@@ -88,7 +89,7 @@ Pulse는 값에 할당이 될때에 무조건 방출하는 프로퍼티 래퍼�
 reactor.state
 	.map { "\($0.value)" }
 	.subscribe(onNext: { value in
-			print("👋🏻👋🏻👋🏻 상태 1")
+	    print("👋🏻👋🏻👋🏻 상태 1")
 	}).disposed(by: disposeBag)
 
 ```
@@ -96,7 +97,7 @@ reactor.state
 해당 state가 변화가 일어나지 않아도 action -> mutate를 거쳐 reduce 통해 state가 반환되기 때문입니다. 아래 코드에서 didTapStateButton 액션이 실행되어 message 상태만 변화해도 모든 상태가 반환되어 바인딩된 객체에 전달됩니다. 
 
 ```swift
-		func reduce(state: State, mutation: Action) -> State {
+    func reduce(state: State, mutation: Action) -> State {
         var newState = state
         switch mutation {
         case .didTapStateButton:
@@ -115,19 +116,22 @@ reactor.state
 	.map { "\($0.value)" }
 	.distinctUntilChanged()
 	.subscribe(onNext: { value in
-			print("👋🏻👋🏻👋🏻 상태 1")
+	    print("👋🏻👋🏻👋🏻 상태 1") // distinctUntilChanged 사용하 때 이슈 있음 (마지막)
 	}).disposed(by: disposeBag)
 ```
 
-> distinctUntilChanged 메소드에서도 trouble shooting이 있음 
+왼쪽은, value에 대해 distinctUntilChanged 없이 출력. 오른쪽은 valueㅇ 대해 distinctUntilChanged 있이 출력.
 
+<img src="https://user-images.githubusercontent.com/56102421/193439670-6ca8b17b-9514-4c00-af9c-604aaee57266.gif" width="300" />          <img src="https://user-images.githubusercontent.com/56102421/193439672-f5a2cfaf-458f-4d25-96d2-2f95f8a9a84c.gif" width="300" />
 
-
+<br />
 정리하면, State가 변화하든 안하든, 항상 이벤트는 전달되는데 `distinctUntilChanged()`를 통해 특정 state가 변화할 때만 이벤트를 받도록 할 수 있습니다.
 
 그럼, 특정 state의 값이 변화하지 않을 때에도 해당 state에 값이 할당되면 이벤트를 받도록 하고 싶은 경우에는 어떻게 해야할까요? 
 
 `distinctUntilChanged()`를 사용하지 않으면 되는 거 아닌가?? 라고 처음엔 생각했지만 전혀 상관 없는 state가 변화해도 이벤트가 전달되는 경우가 있기 때문에 적절한 경우가 아니예요. 이 상황에 `@Pulse`가 필요합니다!
+
+<br /> 
 
 **Pulse 뜯어보기:**
 
@@ -160,6 +164,8 @@ extension Reactor {
 }
 
 ```
+
+<br /> 
 
 **Pulse로 선언하기**:
 
@@ -196,7 +202,8 @@ Pulse는 에러 처리를 위한 토스트 메시지나 알림창에 자주 쓰�
 
 추가로, distinctUntilChange에서 만난 이슈 하나를 공유하자면.. 아래와 같이 작성하면 swift가 타입추론을 하지 못해 오류가 나요. 
 
-[##_Image|kage@cSCN64/btrNwn17emu/J53KBjHUy1gtppJFjSHNsK/img.png|CDM|1.3|{"originWidth":1814,"originHeight":312,"style":"alignCenter","filename":"스크린샷 2022-10-02 오후 2.25.05.png"}_##]
+<img width="874" alt="스크린샷 2022-10-02 오후 2 41 42" src="https://user-images.githubusercontent.com/56102421/193439808-e70ac524-c2b2-4950-8605-ebfb909ce3af.png">
+
 
 distintUntilChanged에서 비교하는 Element는 Equtable 프로토콜을 채택하는데, 이는 방출하는 Element로 비교해서..? 일듯한데.. 정확하진 않고... 조금 더 알아봐야겠어요. 
 
@@ -216,5 +223,7 @@ extension ObservableType where Element: Equatable {
     }
 }
 ```
+
+<br /><br /><br />
 
 - https://github.com/ReactorKit/ReactorKit#pulse
