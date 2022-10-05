@@ -6,9 +6,15 @@
 
 <br />
 
-### XCTActivity 알아보기
+[XCTActivity가 무엇일까?](https://github.com/MashUp-iOS-Test-Master/Test-Cookie-Cook-Book/issues/7)
 
-Activity를 이용하여 긴 테스트 메소드들을 substeps로 작게 나눌 수 있습니다. 각 Activity는 코드 블록으로 이루어졌고 이름이 있습니다.  여러개끼리 중첩할 수 있기 때문에 서로를 호출할 수도 있습니다. Xcode 테스트 리포트는 복잡하고, multistep 테스트들을 하나로 묶고 리팩토링을 통해 테스트를 간단히 만들 수 있습니다. 
+<br />
+
+XCTActivity를 Activity라고 합니다. 
+
+이 Activity를 이용하여 긴 테스트 메소드들을 단계단계로 작게 나눌 수 있습니다. 각 Activity는 테스트 코드 블록으로 이루어졌고 이름을 지정할 수 있습니다.  여러개끼리 중첩할 수 있기 때문에 서로를 호출할 수도 있습니다. 복잡하고, multistep 테스트들을 하나로 묶어 리팩토링하기 때문에 Xcode 테스트 리포트를 간단히 만들 수 있습니다. 
+
+XCTActivity의 기능 2가지를 소개합니다.
 
 1. **Organize Long Test Methods into Substeps<br />긴 테스트 메소드를 Substep으로 쪼개기**
 
@@ -90,7 +96,9 @@ func testMemberLoginFeatures() throws {
 
 > A named substep of a test method.
 
-`XCTActivity` 타입은 테스트 메소드의 단계의 이름을 지정할 수 있게 해주기 때문입니다. 테스트 이름 뿐만 아니라, `XCTAttachment` 기능들을 제공합니다. 
+`XCTActivity` 타입은 테스트 메소드의 단계의 이름을 지정할 수 있게 해주기 때문입니다. 테스트 이름 뿐만 아니라, `XCTAttachment` 기능들을 추가로 제공합니다. 
+
+<br />
 
 ### XCTContext
 
@@ -99,6 +107,8 @@ func testMemberLoginFeatures() throws {
 `XCTContext`는 테스트 케이스에서 직접 테스트에 대해 XCTActivity를 실행할 수 있는 방법을 제공합니다. 이 문장만 보면 뜻이 와닿지 않습니다. 하지만 위 글 [Grouping Tests into Substeps with Activities](https://developer.apple.com/documentation/xctest/activities_and_attachments/grouping_tests_into_substeps_with_activities)를 읽어보면 activity를 만들어주기 위한 객체라는 것을 알 수 있습니다. 긴 UI 테스트 또는 integration test(이게 뭐지)를 재사용을 위해 쪼갤 수 있고 테스트 리포트를 단순화시킬 수 있습니다. [runActivity(named:block:)](https://developer.apple.com/documentation/xctest/xctcontext/2923506-runactivity)메소드
 
 를 이용하여 실행합니다. 
+
+<br />
 
 ### runActivity(named:block:)
 
@@ -110,6 +120,8 @@ class func runActivity<Result>(
     block: (XCTActivity) throws -> Result
 ) rethrows -> Result
 ```
+
+<br />
 
 ### XCTAttachment
 
@@ -139,10 +151,6 @@ Attachment의 Metadata도 설정할 수 있습니다.
 - name
 - uniformTypeIdentifier: UTI 데이터 (무엇인지 모르곘습니다.)
 - userInfo: 딕셔너리 형태로 여러 타입의 데이터 저장가능 
-
-
-
-
 
 <br />
 
