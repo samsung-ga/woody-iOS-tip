@@ -1,42 +1,120 @@
-# woody-iOS-tip
+<div align="center"><h1>Woody Tip</h1></div>
 
-👉 [ISSUES](https://github.com/wody27/wody-tip/issues)에 작성 중
 
-### 기능
 
-- [Sign In with Apple](https://github.com/wody-d/woody-iOS-tip/issues/13)
-- [카카오톡 공유하기 API](https://github.com/wody-d/woody-iOS-tip/issues/15)
+🍷 : Blog Post 
 
-### 공부 
-- [동적/정적 라이브러리/프레임워크란](https://github.com/wody-d/woody-iOS-tip/issues/28)
-- [Cell 기본 구성 방식의 변화](https://github.com/wody-d/woody-iOS-tip/issues/25)
-- [Clean Swift Template](https://github.com/wody-d/woody-iOS-tip/issues/21)
-- [Button (iOS 15이후)](https://github.com/wody-d/woody-iOS-tip/issues/20)
-- [버튼 만들기! (Custom Button)](https://github.com/wody-d/woody-iOS-tip/issues/22)
-- [Git Merge의 세가지 방법 - 깔끔한 커밋 히스토리](https://github.com/wody-d/woody-iOS-tip/issues/18)
-- [상수를 정리하거나 namespace를 만들 때, enum을 쓰는 이유](https://github.com/wody-d/woody-iOS-tip/issues/12)
-- [Xcode 파란색과 회색 폴더의 차이](https://github.com/wody-d/woody-iOS-tip/issues/10)
-- [SwiftUI in UIKit & UIKit in SwiftUI](https://github.com/wody-d/woody-iOS-tip/issues/8)
-- [코드와 View의 동기화](https://github.com/wody-d/woody-iOS-tip/issues/14)
-- [코드 스타일 컨벤션 정리](https://github.com/wody-d/woody-iOS-tip/issues/11)
+🍺 : GitHub issues & markdown
 
-### TDD 
+# 🍎 iOS
 
-- [TDD Cycle](https://github.com/wody-d/woody-iOS-tip/issues/40)
-- [TDD App Setup](https://github.com/wody-d/woody-iOS-tip/issues/41)
-- [Test Expressions](https://github.com/wody-d/woody-iOS-tip/issues/42)
+- [애플 로그인 구현하기 - Sign In with Apple](https://github.com/wody-d/woody-iOS-tip/issues/13) 
+- [카카오톡 공유하기 기능 구현하기 ](https://github.com/wody-d/woody-iOS-tip/issues/15)
+- [UIKit에서 Preview 기능 사용하기 (Preview in UIKit](https://github.com/wody-d/woody-iOS-tip/issues/14) 
+- [상수 정리를 위한 namespace의 타입을 enum을 사용하는 이유 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/12) 
+- [Style share 코드 스타일 컨벤션 정리](https://github.com/wody-d/woody-iOS-tip/issues/11) 
+- [Xcode 파란색 폴더와 회색 폴더의 차이](https://github.com/wody-d/woody-iOS-tip/issues/10) 
+- [UIKit에서 SwiftUI 사용하기](https://github.com/wody-d/woody-iOS-tip/issues/8) 
+- [iOS15의 UIButton Configuration 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/20) 
+- [UIButton - 로딩 버튼, 토글 버튼, 팝업 버튼 구현하기](https://github.com/wody-d/woody-iOS-tip/blob/main/TIL_2022:10:16_button_configuration_more.md)
+- [커스텀 UIButton 만들기](https://github.com/wody-d/woody-iOS-tip/issues/22) 
+- [UITableViewCell Configuration 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/25) 
+- [WidgetKit 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/29) 
+- [iOS에서 Composition Pattern 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/31) 
+- [CollectionView Custom Layout 만들기](https://wodyios.tistory.com/55)
+- [ViewWillAppear 메소드 호출 후에 항상 ViewDidAppear 메소드가 호출될까? - 생명주기에 관해 몰랐던 점 알아보기](https://wodyios.tistory.com/74) 
+- [Intrinsic Content Size 알아보기](https://wodyios.tistory.com/3)
+- [SwiftLint 적용하기](https://wodyios.tistory.com/12)
+- [Custom Color 관리하기](https://wodyios.tistory.com/11)
+- [System Color 알아보기](https://wodyios.tistory.com/10)
+- [Thread, DispatchQueue 알아보기](https://wodyios.tistory.com/9)
+- [Swift 메모리 관리 알아보기](https://wodyios.tistory.com/8)
+- [Coordinator 패턴 알아보기](https://wodyios.tistory.com/40)
+- [UICollectionView custom layout 구현하기](https://wodyios.tistory.com/55)
 
-### 아키텍처
+##### Test 
 
-- [ReactorKit - 아무것도 없음](https://github.com/wody-d/woody-iOS-tip/issues/36)
-- [RIBs](https://github.com/wody-d/woody-iOS-tip/issues/35)
-- [Clean Swift - 이슈](https://github.com/wody-d/woody-iOS-tip/issues/27)
+- [TDD Cycle 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/40) 
 
-## Sample Project
+- [TDD App Setup에 대해 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/41) 
 
-- [CustomButton 샘플 프로젝트](https://github.com/wody-d/woody-iOS-tip/tree/main/CustomButton)
-- [ReactorKit 샘플 프로젝트](https://github.com/wody-d/woody-iOS-tip/blob/main/ReactorKitSampleProject/ReactorKitSample/ReactorKitSample/ViewController.swift)
+- [TDD 기본 메소드들 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/42) 
 
-## Error
+- [Test Doubles에 대해 알아보기](https://github.com/wody-d/woody-iOS-tip/blob/main/TIL_2022:10:01_test_doubles_dummy_fake_stub_mock_spy.md) 
 
-- [Homebrew에서 M1과 intel의 패키지 파일 경로차이로 생기는 문제점](https://github.com/wody-d/woody-iOS-tip/issues/7)
+##### Animation
+
+- [UIView.transition 알아보기](https://wodyios.tistory.com/16)
+
+- [UIView.animate의 animationOptions 알아보기](https://wodyios.tistory.com/15)
+
+- [UIView.Keyframe animation 알아보기](https://wodyios.tistory.com/17)
+
+- [UIBezierpath 알아보기](https://github.com/wody-d/woody-iOS-tip/blob/main/TIL_2022:10:19_uibezierpath.md) 
+
+- [CoreBasicAnimation 알아보기](https://wodyios.tistory.com/25)
+
+- [CAReplicatorLayer 알아보기](https://wodyios.tistory.com/69) 
+
+- [Layer 마스킹에 대해 알아보기 (`layer.mask`)](https://wodyios.tistory.com/70) 
+
+- [AnchorPoint와 position의 관계 알아보기 (feat. SwiftUI에선 anchorPoint가 없다.)](https://wodyios.tistory.com/71) 
+
+- [Layer에 CoreAnimation 체이닝하기 (feat. 무한 체이닝은 가능할까?)](https://wodyios.tistory.com/73) 
+
+- [UIBezierpath 경로따라 물체를 움직이기](https://wodyios.tistory.com/72) 
+
+- [Core Animation KeyframeAnimation, CAMediaTiming 알아보기](https://github.com/wody-d/woody-iOS-tip/blob/main/TIL_2022:10:22_making_core_animation.md) 
+
+##### 3rd party library
+
+- [Moya 알아보기](https://wodyios.tistory.com/23)
+- [Observables 알아보기](https://wodyios.tistory.com/27)
+- [Publish, Behvior, Relay 알아보기](https://wodyios.tistory.com/44)
+- [Operator - Filtering](https://wodyios.tistory.com/45)
+- [Operator - Transforming](https://wodyios.tistory.com/46)
+- [Operator - Combining](https://wodyios.tistory.com/47)
+
+##### HIG
+
+- [HIG - Feedback 읽어보기](https://github.com/wody-d/woody-iOS-tip/blob/main/TIL_2022:10:04_hig_feedback.md) 
+
+- [HIG에 왜 toast가 없을까?](https://www.wodyd.com/ios-hig-toast/) 
+
+# 🍏 SwiftUI
+
+- [List에서 content offset 주는 방법 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/19) 
+
+- [SwiftUI에서 UIKit 사용하기](https://github.com/wody-d/woody-iOS-tip/issues/8) 
+
+# 🍊 Swift
+
+- [Self vs self](https://wodyios.tistory.com/2)
+
+- [Closure](https://wodyios.tistory.com/7)
+
+- [String index](https://wodyios.tistory.com/41)
+
+##### Design Patterns
+
+- [Open-Closed Principle](https://wodyios.tistory.com/42)
+- [Liskov Substitution Principle](https://wodyios.tistory.com/43)
+- [Interface Segregation Principle](https://wodyios.tistory.com/49)
+- [Dependency Inversion Principle](https://wodyios.tistory.com/52)
+- [Factory Pattern](https://wodyios.tistory.com/54)
+
+##### Data structure
+
+- [Union-Find 자료구조](https://wodyios.tistory.com/38)
+
+# ☠️ Error
+
+- [ScrollView 안에 tableView에서 tableView의 높이에 따라 scrollView의 높이를 변경하는 상황에서 변경되지 않는 이슈 해결하기 (feat. dynamic cell)](https://github.com/wody-d/woody-iOS-tip/issues/46) 🍺
+
+- [Homebrew에서 M1과 intel의 패키지 파일 경로차이로 생기는 문제점 해결하기](https://github.com/wody-d/woody-iOS-tip/issues/7)
+
+# 🔀 Git
+
+- [Stash 기능 알아보기](https://wodyios.tistory.com/58)
+
+- [Pull Request & Code Review 알아보기](https://wodyios.tistory.com/14)
