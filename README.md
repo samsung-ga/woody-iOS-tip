@@ -31,6 +31,9 @@
 - [Swift 메모리 관리 알아보기](https://wodyios.tistory.com/8)
 - [Coordinator 패턴 알아보기](https://wodyios.tistory.com/40)
 - [UICollectionView custom layout 구현하기](https://wodyios.tistory.com/55)
+- [Blur 처리하는 3가지 방법 알아보기](TIL/TIL_2022/10/19_blur_effect_3_ways.md)
+- [Swift 5.5 이후 Concureency 알아보기](TIL/TIL_2022:10:11_concurrency_swift5.5_basic.md)
+- 
 
 ##### Test 
 
@@ -38,6 +41,7 @@
 - [TDD App Setup에 대해 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/41) 
 - [TDD 기본 메소드들 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/42) 
 - [Test Doubles에 대해 알아보기](https://github.com/wody-d/woody-iOS-tip/blob/main/TIL_2022:10:01_test_doubles_dummy_fake_stub_mock_spy.md) 
+- [XCTActivity 알아보기](TILTIL_2022:10:05_xcactivity.md)
 
 ##### Animation
 
@@ -61,6 +65,8 @@
 - [Operator - Filtering](https://wodyios.tistory.com/45)
 - [Operator - Transforming](https://wodyios.tistory.com/46)
 - [Operator - Combining](https://wodyios.tistory.com/47)
+- [PinLayout, FlexLayout 알아보기](TIL/TIL_2022:10:13_pinlayout_flexlayout.md)
+- [ReactorKit Pulse 알아보기](TIL/TIL_2022:10:02_reactorkit_pulse.md)
 
 ##### HIG
 
@@ -77,6 +83,8 @@
 - [Self vs self](https://wodyios.tistory.com/2)
 - [Closure](https://wodyios.tistory.com/7)
 - [String index](https://wodyios.tistory.com/41)
+- [Task - init, cancel](TIL/TIL_2022:10:11_task_init_cancel.md)
+- [Swift Naming](TIL/TIL_2022:10:02_swift_naming.md)
 
 ##### Design Patterns
 
@@ -88,14 +96,20 @@
 
 ##### Data structure
 
-- [Union-Find 자료구조](https://wodyios.tistory.com/38)
+- [Union-Find](https://wodyios.tistory.com/38)
+- [Heap](TIL/TIL_2022:10:10_heap.md)
 
 # ☠️ Error
 
 - [ScrollView 안에 tableView에서 tableView의 높이에 따라 scrollView의 높이를 변경하는 상황에서 변경되지 않는 이슈 해결하기 (feat. dynamic cell)](https://github.com/wody-d/woody-iOS-tip/issues/46) 🍺
 - [Homebrew에서 M1과 intel의 패키지 파일 경로차이로 생기는 문제점 해결하기](https://github.com/wody-d/woody-iOS-tip/issues/7)
+- [Tuist 빋르 시 FlexLayout, PinLayout 발생하는 오류 해결하기](https://github.com/wody-d/woody-iOS-tip/blob/main/TIL/TIL_2022:10:14_tuist_layout_flexlayout_build_error.md)
 
 # 🔀 Git
 
 - [Stash 기능 알아보기](https://wodyios.tistory.com/58)
 - [Pull Request & Code Review 알아보기](https://wodyios.tistory.com/14)
+
+# 🚌 ETC
+
+- [타이포라에서 이미지 바로 업로드하기](TIL/TIL_2022:10:10_upload_image_with_typora.md)
