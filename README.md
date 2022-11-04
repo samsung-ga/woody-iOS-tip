@@ -73,6 +73,10 @@
 - [HIG - Feedback 읽어보기](TIL/TIL_2022:10:04_hig_feedback.md) 
 - [HIG에 왜 toast가 없을까?](https://www.wodyd.com/ios-hig-toast/) 
 
+##### ETC
+
+- [모듈화의 이유 알아보기 / 정적, 동적 라이브러리 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/28)
+
 # 🍏 SwiftUI
 
 - [List에서 content offset 주는 방법 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/19) 
