@@ -16,7 +16,7 @@
 - [Xcode 파란색 폴더와 회색 폴더의 차이](https://github.com/wody-d/woody-iOS-tip/issues/10) 
 - [UIKit에서 SwiftUI 사용하기](https://github.com/wody-d/woody-iOS-tip/issues/8) 
 - [iOS15의 UIButton Configuration 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/20) 
-- [UIButton - 로딩 버튼, 토글 버튼, 팝업 버튼 구현하기](https://github.com/wody-d/woody-iOS-tip/blob/main/TIL_2022:10:16_button_configuration_more.md)
+- [UIButton - 로딩 버튼, 토글 버튼, 팝업 버튼 구현하기](TIL/TIL_2022:10:16_button_configuration_more.md)
 - [커스텀 UIButton 만들기](https://github.com/wody-d/woody-iOS-tip/issues/22) 
 - [UITableViewCell Configuration 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/25) 
 - [WidgetKit 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/29) 
@@ -39,23 +39,23 @@
 
 - [TDD Cycle 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/40) 
 - [TDD App Setup에 대해 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/41) 
-- [TDD 기본 메소드들 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/42) 
-- [Test Doubles에 대해 알아보기](https://github.com/wody-d/woody-iOS-tip/blob/main/TIL_2022:10:01_test_doubles_dummy_fake_stub_mock_spy.md) 
+- [TDD 기본 메소드들 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/42)  
 - [XCTActivity 알아보기](TILTIL_2022:10:05_xcactivity.md)
+- [Test Doubles에 대해 알아보기](TIL/TIL_2022:10:01_test_doubles_dummy_fake_stub_mock_spy.md) 
 
 ##### Animation
 
 - [UIView.transition 알아보기](https://wodyios.tistory.com/16)
 - [UIView.animate의 animationOptions 알아보기](https://wodyios.tistory.com/15)
 - [UIView.Keyframe animation 알아보기](https://wodyios.tistory.com/17)
-- [UIBezierpath 알아보기](https://github.com/wody-d/woody-iOS-tip/blob/main/TIL_2022:10:19_uibezierpath.md) 
+- [UIBezierpath 알아보기](TIL/TIL_2022:10:19_uibezierpath.md) 
 - [CoreBasicAnimation 알아보기](https://wodyios.tistory.com/25)
 - [CAReplicatorLayer 알아보기](https://wodyios.tistory.com/69) 
 - [Layer 마스킹에 대해 알아보기 (`layer.mask`)](https://wodyios.tistory.com/70) 
 - [AnchorPoint와 position의 관계 알아보기 (feat. SwiftUI에선 anchorPoint가 없다.)](https://wodyios.tistory.com/71) 
 - [Layer에 CoreAnimation 체이닝하기 (feat. 무한 체이닝은 가능할까?)](https://wodyios.tistory.com/73) 
 - [UIBezierpath 경로따라 물체를 움직이기](https://wodyios.tistory.com/72) 
-- [Core Animation KeyframeAnimation, CAMediaTiming 알아보기](https://github.com/wody-d/woody-iOS-tip/blob/main/TIL_2022:10:22_making_core_animation.md) 
+- [Core Animation KeyframeAnimation, CAMediaTiming 알아보기](TIL/TIL_2022:10:22_making_core_animation.md) 
 
 ##### 3rd party library
 
@@ -70,7 +70,7 @@
 
 ##### HIG
 
-- [HIG - Feedback 읽어보기](https://github.com/wody-d/woody-iOS-tip/blob/main/TIL_2022:10:04_hig_feedback.md) 
+- [HIG - Feedback 읽어보기](TIL/TIL_2022:10:04_hig_feedback.md) 
 - [HIG에 왜 toast가 없을까?](https://www.wodyd.com/ios-hig-toast/) 
 
 # 🍏 SwiftUI
