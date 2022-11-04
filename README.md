@@ -33,14 +33,14 @@
 - [UICollectionView custom layout 구현하기](https://wodyios.tistory.com/55)
 - [Blur 처리하는 3가지 방법 알아보기](TIL/TIL_2022/10/19_blur_effect_3_ways.md)
 - [Swift 5.5 이후 Concureency 알아보기](TIL/TIL_2022:10:11_concurrency_swift5.5_basic.md)
-- 
+- [@Published 프로퍼티 래퍼를 protocol에 정의하기](https://wodyios.tistory.com/78)
 
 ##### Test 
 
 - [TDD Cycle 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/40) 
 - [TDD App Setup에 대해 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/41) 
 - [TDD 기본 메소드들 알아보기](https://github.com/wody-d/woody-iOS-tip/issues/42)  
-- [XCTActivity 알아보기](TILTIL_2022:10:05_xcactivity.md)
+- [XCTActivity 알아보기](TIL/TIL_2022:10:05_xcactivity.md)
 - [Test Doubles에 대해 알아보기](TIL/TIL_2022:10:01_test_doubles_dummy_fake_stub_mock_spy.md) 
 
 ##### Animation
